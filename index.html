@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+   <title>FCS~Display</title>
+</head>
+
+<body class="container">
+   
+   <div class="wrapper"></div>
+   
+   <script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
+
+
+<style>
+   * {
+      margin: 0;
+      padding: 0;
+   }
+   
+   body {
+      background-color: #1EFF6B33;
+   }
+   
+   
+   .container {
+      background-image: url('bg.png');
+      background-position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+   
+   
+   .wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 200px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      animation: BgAnimation 40s linear infinite, Rotate 30s linear infinite;
+   }
+   
+   @keyframes BgAnimation {
+      0% {
+         background-image: url('fcs.png');
+         background-size: absolute;
+      }
+      
+      35% {
+         background-image: url('bg.png');
+         background-size: absolute;
+      }
+      
+      50% {
+         background-image: url('fcs.png');
+         background-size: absolute;
+      }
+      
+      75% {
+         background-image: url('bg.png');
+         background-size: absolute;
+      }
+      
+      100% {
+         background-image: url('fcs.png');
+         background-size: absolute;
+      }
+   }
+   
+   @keyframes Rotate {
+      0% {
+         transform: translate(-50%, -50%) rotate(0deg);
+      }
+      
+      100% {
+         transform: translate(-50%, -50%) rotate(360deg);
+      }
+   }
+   
+   
+   /*Media query for desktop view  {1366 by 768}*/
+   @media only screen and (min-width: 1024px) and (max-width: 1279px) {
+      .wrapper {
+         width: 600px;
+         height: 337px;
+      }
+   }
+   
+   /* Media query for 16:9 screens (HD) */
+   @media only screen and (min-width: 1280px) and (min-height: 720px) and (min-aspect-ratio: 16/9) {
+      .wrapper {
+         width: 800px;
+         height: 450px;
+      }
+   }
+   
+   /* Media query for 16:9 screens (Full HD) */
+   @media only screen and (min-width: 1920px) and (min-height: 1080px) and (min-aspect-ratio: 16/9) {
+      .wrapper {
+         width: 1200px;
+         height: 675px;
+      }
+   }
+   
+   /* Media query for 16:9 screens (4K) */
+   @media only screen and (min-width: 3840px) and (min-height: 2160px) and (min-aspect-ratio: 16/9) {
+      .wrapper {
+         width: 2000px;
+         height: 1125px;
+      }
+   }
+</style>
