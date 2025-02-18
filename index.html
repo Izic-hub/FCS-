@@ -10,6 +10,11 @@
 
 <body class="container">
    
+   <div class="welcome-message">
+      <span class="flower">Welcome to Service</span>
+   </div>
+   
+   
    <div class="wrapper"></div>
    
    <script src="script.js" type="text/javascript" charset="utf-8"></script>
@@ -25,7 +30,8 @@
    }
    
    body {
-      background-color: #1EFF6B33;
+      background-color: #03052254;
+      
    }
    
    
@@ -57,17 +63,17 @@
       }
       
       35% {
-         background-image: url('bg.png');
-         background-size: absolute;
-      }
-      
-      50% {
          background-image: url('fcs.png');
          background-size: absolute;
       }
       
-      75% {
+      50% {
          background-image: url('bg.png');
+         background-size: absolute;
+      }
+      
+      75% {
+         background-image: url('fcs.png');
          background-size: absolute;
       }
       
@@ -84,6 +90,66 @@
       
       100% {
          transform: translate(-50%, -50%) rotate(360deg);
+      }
+   }
+   
+   
+   .welcome-message {
+      padding: 1%;
+      top: 50%;
+      left: 50%;
+      font-weight: bold;
+      text-align: center;
+      opacity: 0;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      animation: welcome 5s infinite;
+   }
+   
+   @keyframes welcome {
+      0% {
+         opacity: 0;
+         transform: translateY(50px);
+      }
+      
+      50% {
+         opacity: 1;
+         transform: translateY(0);
+      }
+      
+      100% {
+         opacity: 0;
+         transform: translateY(-50px);
+      }
+   }
+   
+   .flower {
+      font-family: fantasy;
+      font-size: 25px;
+      color: azure;
+      text-shadow:
+         0 0 10px seagreen,
+         0 0 20px dodgerblue,
+         0 0 40px mediumvioletred,
+         0 0 80px lightgoldenrodyellow;
+      transition: 2s ease;
+      animation: flow 5s infinite;
+   }
+   
+   @keyframes flow {
+      0% {
+         transform: scale(1, 1);
+         
+      }
+      
+      50% {
+         opecity: 1;
+         
+      }
+      
+      100% {
+         transform: scale(1.5);
+         opecity: 0;
+         
       }
    }
    
